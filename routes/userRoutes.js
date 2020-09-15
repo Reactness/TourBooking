@@ -10,6 +10,11 @@ router
     .post('/login', authController.login)
 
 router
+    .patch('/updateMyPassword',
+        authController.protect,
+        authController.updatePassword)
+
+router
     .post('/forgotPassword', authController.forgotPassword)
     .patch('/resetPassword/:token', authController.resetPassword)
 
